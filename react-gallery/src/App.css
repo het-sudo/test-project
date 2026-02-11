@@ -1,0 +1,164 @@
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s;
+} 
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+/* Controls */  
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+.folders button {
+  margin: 5px;
+  padding: 6px 12px;
+}
+
+.folders .active {
+  background: black;
+  color: white;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  padding: 6px 10px;
+}
+/* Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Dice window */
+.dice-window {
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Dice strip (moves vertically) */
+.dice-strip {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual dice faces */
+.dice-face {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+/* Roll button */
+.roll-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+/*  */
+
+.container {
+  width: 300px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+
+.input-section {
+  display: flex;
+  gap: 5px;
+}
+
+input {
+  flex: 1;
+  padding: 5px;
+}
+
+button {
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  cursor: pointer;
+}
