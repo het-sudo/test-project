@@ -218,8 +218,9 @@ li {
 
 /* user component */
 .user-container{
-  border: 10px solid black;
+  border: 10px solid white;
   width: fit-content;
+  box-shadow: 10px 10px rgb(213, 207, 207);
 }
 
 img{
@@ -231,8 +232,7 @@ p{
  font-size: larger;
  font-weight: 500;
  text-transform: uppercase;
-
-
+ text-decoration: underline;
 }
 
 
