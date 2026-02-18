@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../App.css";
+// import "../App.css";
 
 
 function Cart() {
@@ -38,9 +38,7 @@ function Cart() {
      );
    };
  
-   const totalPrice = cart.reduce(
-     (total, item) => total + item.price * item.quantity,
-   );
+   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity,0);
  
    return (
      <div className="container">

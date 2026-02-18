@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Cart from './components/Cart'
+import Cart from "./components/Cart";
 // import Diceroller from './components/Diceroller'
 // import Slider from './components/Slider'
 import Todo from "./components/Todo";
@@ -14,48 +14,40 @@ import Productlist from "./components/nested2/Productlist";
 import AdminDashboard from "./components/AdminDashboard";
 import UserDashboard from "./components/UserDashboard";
 import Login from "./components/Login";
+import Email from "./components/email/Email";
 
 function App() {
+  // const [user, setUser] = useState(null); 
 
-    const [user, setUser] = useState(null); // {name: "John", role: "admin"}
-
-  // Show login if no user
-  if (!user) return <Login setUser={setUser} />;
+  // if (!user) return <Login setUser={setUser} />;
   return (
     <div>
       {/* <Cart/> */}
-      {/* <hr /> */}
       {/* <Diceroller/> */}
-      {/* <hr /> */}
       {/* <Slider/> */}
-      <Todo />
-      <hr />
-      <Usercard
+       {/* <Todo /> */}
+      {/* <Usercard
         name="het"
         age="20"
         email="het@gmail.com"
         aavtar="https://static.vecteezy.com/system/resources/thumbnails/048/216/761/small/modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png.png"
-      />
-      <hr />
-      <Role />
-      <hr />
+      /> */}
+      {/* <Role /> */}
       {/* <Post
       title="Nested Components in React"
       content="This shows how components can be nested."
       author="John Doe"
       comments={sampleComments}
     />   */}
-      {/* <Products/> */}
+      {/* <Products/> */} ¸
       {/* <State/> */}
-      {/* <hr /> */}
-      <Header />
-      <hr />
-      <Productlist />
-      <hr/>
+      {/* <Header /> */}
+      {/* <Productlist /> */}
       {/* <h1>Welcome, {user.name}</h1>
 
       {user.role === "admin" && <AdminDashboard />}
-      {user.role === "user" && <UserDashboard />} */}
+      {user.role === "user" && <UserDashboard />}  */}
+      <Email/>
     </div>
   );
 }
