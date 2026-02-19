@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Cart from "./components/Cart";
 // import Diceroller from './components/Diceroller'
 // import Slider from './components/Slider'
@@ -15,13 +16,17 @@ import AdminDashboard from "./components/AdminDashboard";
 import UserDashboard from "./components/UserDashboard";
 import Login from "./components/Login";
 import Email from "./components/email/Email";
+import ColorMixer from "./components/ColorMixer";
+import Searchcomponent from "./components/Searchcomponent";
 
 function App() {
   // const [user, setUser] = useState(null); 
 
   // if (!user) return <Login setUser={setUser} />;
   return (
+    <BrowserRouter>
     <div>
+      
       {/* <Cart/> */}
       {/* <Diceroller/> */}
       {/* <Slider/> */}
@@ -47,8 +52,21 @@ function App() {
 
       {user.role === "admin" && <AdminDashboard />}
       {user.role === "user" && <UserDashboard />}  */}
-      <Email/>
+     
+      {/* <ColorMixer/> */}
+
+      <Routes>
+
+        <Route path="/search" element={<Searchcomponent/>} >
+            <Route path="todo" element={<Todo/>}/>
+
+        </Route>
+        <Route path="/email" element={<Email/>}/>
+      </Routes>
+ 
+  
     </div>
+    </BrowserRouter>
   );
 }
 
