@@ -1,52 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import Notes from './componets/Notes';
+import Feedback from './componets/Feedback';
+import Note from './componets/Note';
+import Register from './componets/Register';
+import Login from './componets/Login';
+import Navbar from './componets/Navbar';
+import Protectedroute from './componets/Protectedroute';
+
+
 
 function App() {
-
-  const [note, setnotes] = useState([])
-
-  async function getallnotes() {
-    try {
-      const response = await axios.get('http://localhost:4000/getallnotes');
-      console.log(response.data);
-      setnotes(response.data.content); // FIXED
-    } catch (error) {
-      console.error("Request failed:", error);
-    }
-  }
-  
-
-  useEffect(() => {
-    getallnotes();
-  }, []); // FIXED
-
   return (
-    <div>
-      {
-        note.map((n) => (
-          <Card sx={{ maxWidth: 345,margin: 2 }} key={n._id}>
-            <CardContent>
-              <Typography gutterBottom variant="h5">
-                {n.title}
-              </Typography>
-              <Typography variant="body2">
-                {n.details}
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button  size="small">Update</Button>
-              <Button  size="small">Delete</Button>
-            </CardActions>
-          </Card>
-        ))
-      }
-    </div>
-  )
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Protectedroute><Notes /></Protectedroute>} />
+        <Route path="/feedback" element={<Protectedroute><Feedback /></Protectedroute>} />
+        <Route path="/note/:id" element={<Protectedroute><Note /></Protectedroute>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
