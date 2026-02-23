@@ -11,9 +11,9 @@ require("dotenv").config();
 
 
 mongoose
-  .connect(process.env.dbURL)
+  .connect(process.env.dbURL || "mongodb://localhost:27017/MERN_PROJECT")
   .then(() => {
-    app.listen(process.env.PORT || 3000, () => {
+    app.listen(process.env.PORT || 4000, () => {
       console.log("Connection to the Database was established!");
     });
   })
