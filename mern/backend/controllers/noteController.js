@@ -1,4 +1,4 @@
-const Note = require("../modals/note");
+const Note = require("../models/note");
 
 const get_all_notes = (req, res) => {
   Note.find()

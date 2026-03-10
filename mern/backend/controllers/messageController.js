@@ -1,5 +1,5 @@
 
-const Message = require("../modals/message");
+const Message = require("../models/message");
 
 
 const submit_feedback = (req, res) => {

@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { setAuthToken } from './services/auth';
+
+const existingToken = localStorage.getItem("token");
+setAuthToken(existingToken);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

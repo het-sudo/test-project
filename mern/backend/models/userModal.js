@@ -6,6 +6,13 @@ const UserSchema = new mongoose.Schema({
  name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+     isverfied:{
+        type:Boolean,
+        default:false
+    },  
+    verificationcode:String
+
+
 });
 // const loginschema=new mongoose.Schema({
 
